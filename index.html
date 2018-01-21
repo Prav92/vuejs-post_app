@@ -1,24 +1,56 @@
 <html>
 <head>
 <title>VueJs Components - coligo</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
-        <!-- we will mount our VueJs instance to this div -->
-        <greeting></greeting>
-    </div>
+  <div class="container-fluid">
+    <ul class="list-group">
+      <post v-for="post in posts" :post="post"></post>
+    </ul>
+  </div>
+</div>
 
-    <!-- include VueJs in our page via a CDN -->
-    <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
-    <script>
-        // create a new Vue instance and mount it to our div element above with the id of app
-        Vue.component('greeting', {
-          template: '<h1>Welcome to Vuejs!</h1>'
-        });
-        
-        var vm = new Vue({
-            el: '#app'
-        });
-    </script>
+<template id="post-template">
+ <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 card grid-item">
+      <div class="thumbnail">
+       
+        <div class="caption">
+          <h3 id="thumbnail-label">{{ post.title }}</h3>
+          <p>{{post.description}}</p>
+        </div>
+        <div class="caption card-footer">
+          <ul class="list-inline">
+            <li><i class="fa fa-user"></i></li>
+            <li><i class="glyphicon glyphicon-thumbs-up" @click="upvote"></i></li>
+            <li><i class="glyphicon glyphicon-thumbs-down" @click="downvote"></i></li>
+            <li><span class="label label-primary">{{ votes }}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+<!-- <div class="card">
+  <div class="card-header">
+    Posts
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">{{ post.title }}</h4>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <i class="glyphicon glyphicon-thumbs-up" @click="upvote"></i>
+    
+    <i class="glyphicon glyphicon-thumbs-down" @click="downvote"></i>
+    <span class="label label-primary">{{ votes }}</span>
+  </div>
+</div> -->
+</template>
+   
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="post.js"></script>
 </body>
 </html>
