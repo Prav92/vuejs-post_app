@@ -48,6 +48,20 @@ var vm = new Vue({
               title: "coligo is the bomb!",
               description: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
               votes: 10
-          }]
-        }
+          }],
+          post: "",
+          description: ""
+        },
+
+        methods: {
+    NewPost: function() {
+      this.posts.push({
+        title: this.post,
+        description: this.description,
+        votes: 0
+      })
+      this.post = "";
+      this.description = "";
+    }
+  }
       });

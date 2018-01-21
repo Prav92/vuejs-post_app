@@ -6,13 +6,28 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-  <div class="container-fluid">
-    <ul class="list-group">
-      <post v-for="post in posts" :post="post"></post>
-    </ul>
+  <div id="app">
+    <div class="row col-md-6" style="margin-right: 33%;margin-left: 15%">
+      <div class="form-group">
+        <label for="email">Post title</label>
+         <input type="text" class="form-control" placeholder="Enter a post..." v-model="post" @keyup.enter="NewPost">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Description:</label>
+        <textarea class="form-control" placeholder="Enter a post description..." rows="5" v-model="description"></textarea>
+      </div>
+      <button type="submit"  @click="NewPost" class="btn btn-primary">Submit</button>
+      <br/>
+    </div>
+    
+    <div class="row">
+      <div class="container-fluid">
+        <ul class="list-group">
+          <post v-for="post in posts" :post="post"></post>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
 
 <template id="post-template">
  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 card grid-item">
