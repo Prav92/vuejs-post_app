@@ -30,24 +30,20 @@ Vue.component('post', {
   }
 });
 
-
 var vm = new Vue({
   el: "#app",
   data: {
     posts: [{
-              title: "First post",
-              description: "This is my first post to using Vue js, Post for my demo vue js starting at 15 votes",
-              votes: 15
-          },
-          {
-              title: "Upvote",
-              description: "Try out the upvoting, it works, I promise",
-              votes: 53
-          },
-          {
-              title: "coligo is the bomb!",
-              description: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-              votes: 10
-          }]
-        }
-      });
+				title: "A post for our reddit demo starting at 15 votes",
+				votes: 15
+			},
+			{
+				title: "Try out the upvoting, it works, I promise",
+				votes: 53
+			},
+			{
+				title: "coligo is the bomb!",
+				votes: 10
+			}]
+  }
+});
