@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>VueJs Components - coligo</title>
+</head>
+<body>
+    <div id="app">
+        <!-- we will mount our VueJs instance to this div -->
+        <greeting></greeting>
+    </div>
+
+    <!-- include VueJs in our page via a CDN -->
+    <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+    <script>
+        // create a new Vue instance and mount it to our div element above with the id of app
+        Vue.component('greeting', {
+          template: '<h1>Welcome to Vuejs!</h1>'
+        });
+        
+        var vm = new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>
